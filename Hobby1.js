@@ -46,7 +46,7 @@ class HobbyList extends React.Component {
 
   render(){
 	
-		console.log("Options to be rendered are below:=>");
+		
 		for (var i = 0; i < this.props.options.length; i++) {    
 		   console.log("option:=>" + this.props.options[i]);  
 		}
@@ -132,6 +132,7 @@ class Hobby1 extends React.Component {
 		this.setState({ items: items });
 		this.setState({ selectedhobbies: selectedhobbies });
 		console.log("Hobbies displayed on screen after deletion:=>"+this.state.items)
+		alert("Hobby deleted successfully");
 	};
 	
 	addhobby(event)
@@ -140,6 +141,7 @@ class Hobby1 extends React.Component {
 		items.push(this.state.newHobby)
 		this.setState({ items: items })
 		console.log("add hobby:=>"+items)
+		alert("Hobby added successfully");
 	};
 	 render() {
 			console.log("Got Hobbies from Employee:"+this.props.selectedValues)
@@ -147,20 +149,23 @@ class Hobby1 extends React.Component {
 			  <div class = "dottedborder">
 			   <MuiThemeProvider>
 				   <div>
+				   <div class="fontstyle">
 					   <TextField
 					    style = {{ height: 100}}
-						 floatingLabelText="Add hobby"
+						 floatingLabelText="Enter Your Hobbies"
 						 onChange = {(event,newValue) => this.setState({newHobby:newValue})}
 						 //value = {address.street}
 						 />
-					   <br/>
+					   
 					   
 				   <RaisedButton label="Add Hobby" style={style} onClick={(event) => this.addhobby(event)}/>
+				   </div>
 				   <RaisedButton label="Delete Hobby" style={style} onClick={(event) => this.deletehobby(event)}/>
 				   <RaisedButton label="Edit Hobby" style={style} onClick={(event) => this.edithobby(event)}/>
+				   
 				   </div>
 				   {
-					   (this.props.isFindMode)?
+					   (this.props.findmode)?
 						(<div><HobbyList callbackFromHobby = {this.myCallbackHob.bind(this)} options = {this.props.selectedValues}/></div>)
 						:
 						(<div><HobbyList callbackFromHobby = {this.myCallbackHob.bind(this)} options = {this.state.items} editmode = {this.state.editmode}/></div>)

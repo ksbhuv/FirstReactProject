@@ -109,8 +109,8 @@ class Employee extends React.Component {
 	
     render() {
 		var { isLoaded, items, address } = this.state;
-		console.log("Hobbies in Employee are: "+this.state.hobbies);
-		console.log("items in Employee are: "+items);
+		//console.log("Hobbies in Employee are: "+this.state.hobbies);
+		//console.log("items in Employee are: "+items);
 		return (
           <div>
            <MuiThemeProvider>

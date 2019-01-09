@@ -42,7 +42,7 @@ h8,h9{
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
-  color:blue;
+  color:grey;
 	
 }
 .fontstyle{
@@ -53,7 +53,7 @@ h8,h9{
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
-  color:blue;
+  color:grey;
 }
 
 h1{
@@ -64,10 +64,16 @@ h1{
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
-  color:blue;
+  color:grey;
 	
 }
 
+.right{
+  
+  top: 100px;
+  right: 10px;
+ 
+}
 .dottedborder{
-	border: 3px dotted blue;
+	border: 3.5px dashed  silver ;
 }
